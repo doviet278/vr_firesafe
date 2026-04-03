@@ -200,11 +200,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19eb110016d18bd4683b66488b59d81a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  totalHazardsToFind: 2
+  totalHazardsToFind: 3
   victoryPanel: {fileID: 7335630418965570939}
   tipText: {fileID: 1065323981617064523}
   fireSafetyTips:
-  - 1 2 3 4  5
+  - "v\u1EB7n k\xEDn b\xECnh gas khi kh\xF4ng s\u1EED d\u1EE5ng\nr\xFAt c\xE1c thi\u1EBFt
+    b\u1ECB \u0111i\u1EC7n kh\xF4ng d\xF9ng t\u1EDBi\nkh\xF4ng \u0111\u1EC3 x\u0103ng
+    d\u1EA7u, ch\u1EA5t ch\xE1y n\u1ED5 g\u1EA7n \u1ED5 \u0111i\u1EC7n"
 --- !u!1 &5998840051865770646
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,8 +776,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 29, y: 81}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 56, y: -70}
+  m_SizeDelta: {x: 400, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8157768420189591216
 CanvasRenderer:
