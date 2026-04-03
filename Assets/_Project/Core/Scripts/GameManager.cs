@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Victory UI Components")]
     public GameObject victoryPanel; // Khung giao diện chúc mừng
-    public Text tipText; // Dòng chữ hiển thị kiến thức
+    public TMP_Text tipText; // Dòng chữ hiển thị kiến thức
 
     [Header("Knowledge Tips")]
     [TextArea(2, 5)]
