@@ -1081,9 +1081,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: coremanager
       objectReference: {fileID: 0}
+    - target: {fileID: 2523169066494091755, guid: eec59e8fcfc7e2741a4a0aaee5c7066f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2568636098799702129, guid: eec59e8fcfc7e2741a4a0aaee5c7066f, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335630418965570939, guid: eec59e8fcfc7e2741a4a0aaee5c7066f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8888847890949267600, guid: eec59e8fcfc7e2741a4a0aaee5c7066f, type: 3}
       propertyPath: m_LocalPosition.x

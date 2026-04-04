@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1441652197001272519}
   - component: {fileID: 6851700514677484800}
   - component: {fileID: 7919878490494356873}
-  - component: {fileID: 3850882723457992771}
   m_Layer: 0
   m_Name: ParticleSystem_Fire_RateOverTime_Medium
   m_TagString: Untagged
@@ -4911,21 +4910,6 @@ ParticleSystemRenderer:
   m_MeshWeighting1: 1
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
---- !u!114 &3850882723457992771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7685568948667721206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7643790da10fc1b4ca5c2b5b989c2420, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FireNode
-  burnRate: 5
-  heatSpreadRadius: 3
-  heatPower: 10
 --- !u!1001 &3355094166666082900
 PrefabInstance:
   m_ObjectHideFlags: 0

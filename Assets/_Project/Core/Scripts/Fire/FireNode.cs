@@ -24,8 +24,7 @@ public class FireNode : MonoBehaviour
             return;
         }
 
-        // 1. Rút nhiên liệu của vật chủ
-        hostMaterial.ConsumeFuel(burnRate * Time.deltaTime);
+        //hostMaterial.ConsumeFuel(burnRate * Time.deltaTime);
 
         // 2. Tỏa nhiệt lây lan sang các vật xung quanh (Cơ chế cháy lan)
         SpreadHeat();
@@ -51,13 +50,11 @@ public class FireNode : MonoBehaviour
     // Hàm nhận bọt tuyết từ bình chữa cháy
     public void TakeDamage(ExtinguisherType extType, float damageAmount)
     {
-        // BƯỚC XỬ LÝ LOGIC PCCC (Cực kỳ quan trọng)
         float effectiveness = GetExtinguisherEffectiveness(hostMaterial.fireClass, extType);
 
         if (effectiveness <= 0f)
         {
-            Debug.Log("SAI LOAI BINH CHUA CHAY! Khong co tac dung, hoac gay nguy hiem!");
-            // Gọi hàm trừ máu Player nếu xịt nước vào điện ở đây
+
             return;
         }
 

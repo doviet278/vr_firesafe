@@ -60,10 +60,10 @@ public class FlammableMaterial : MonoBehaviour
         if (fireNodePrefab != null)
         {
             // Sinh ra ngọn lửa ngay tại tâm vật thể
-            currentFireNode = Instantiate(fireNodePrefab, transform.position, Quaternion.identity);
+            currentFireNode = Instantiate(fireNodePrefab, this.transform.position, Quaternion.identity);
             
             // Gắn ngọn lửa vào làm con của vật thể này
-            currentFireNode.transform.SetParent(transform); 
+            currentFireNode.transform.SetParent(this.transform); 
             
             // Báo cho ngọn lửa biết nó đang đốt vật nào
             FireNode fireScript = currentFireNode.GetComponent<FireNode>();
@@ -94,7 +94,7 @@ public class FlammableMaterial : MonoBehaviour
     public void Extinguish()
     {
         isBurning = false;
-        currentTemperature = 25f; // Đưa nhiệt độ về an toàn
+        currentTemperature = 25f; 
         if (currentFireNode != null)
         {
             Destroy(currentFireNode);

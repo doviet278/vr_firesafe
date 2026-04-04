@@ -73,4 +73,15 @@ public class ExtinguisherItem : ItemBase
             }
         }
     }
+
+    private void OnDrawGizmos()
+    {
+        Transform camTransform = cam.transform;
+
+        // Set màu tia (đỏ cho dễ thấy)
+        Gizmos.color = Color.red;
+
+        // Vẽ tia raycast
+        Gizmos.DrawRay(camTransform.position, camTransform.forward * sprayDistance);
+    }
 }
