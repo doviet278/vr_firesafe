@@ -10,7 +10,7 @@ public class PC_Controller : MonoBehaviour
 
     [Header("Camera Look Settings")]
     public Transform playerCamera;
-    public float mouseSensitivity = 15f; // Giảm số này xuống vì hệ thống mới đọc delta chuột nhạy hơn
+    public float mouseSensitivity = 15f;
 
     private CharacterController controller;
     private Vector3 velocity;
@@ -19,8 +19,8 @@ public class PC_Controller : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     void Update()
