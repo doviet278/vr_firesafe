@@ -48,6 +48,7 @@ public class ExtinguisherItem : ItemBase
 
         foreach (RaycastHit hit in hits)
         {
+            Debug.LogError(hit.collider);
             // Kiểm tra xem tia ngắm có chạm trúng vật thể nào chứa code FireNode không
             FireNode fire = hit.collider.GetComponent<FireNode>();
             if (fire != null)

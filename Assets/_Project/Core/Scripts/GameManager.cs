@@ -119,7 +119,6 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        // Có thể dùng lại victoryPanel hoặc tạo panel riêng
         if (victoryPanel != null)
         {
             victoryPanel.SetActive(true);
