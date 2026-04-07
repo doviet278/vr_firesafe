@@ -8,7 +8,7 @@ public class FireNode : MonoBehaviour
     public float heatPower = 10f; // Sức nóng truyền cho vật khác mỗi giây
 
     private FlammableMaterial hostMaterial;
-    private float fireHealth = 100f; // Máu của ngọn lửa (Bị trừ khi xịt bình)
+    private float fireHealth = 100f;    
 
     public void Initialize(FlammableMaterial host)
     {
@@ -20,13 +20,12 @@ public class FireNode : MonoBehaviour
     {
         if (hostMaterial == null || !hostMaterial.isBurning)
         {
-            Destroy(gameObject); // Tự hủy nếu vật chủ hết cháy
+            Destroy(gameObject); 
             return;
         }
 
         //hostMaterial.ConsumeFuel(burnRate * Time.deltaTime);
 
-        // 2. Tỏa nhiệt lây lan sang các vật xung quanh (Cơ chế cháy lan)
         SpreadHeat();
     }
 
@@ -67,31 +66,52 @@ public class FireNode : MonoBehaviour
         }
     }
 
-    // Ma trận đánh giá hiệu quả PCCC
     private float GetExtinguisherEffectiveness(FireClass fClass, ExtinguisherType eType)
     {
-        // Ví dụ: Lửa chất Rắn (A)
-        if (fClass == FireClass.A_Solid)
+        switch (fClass)
         {
-            if (eType == ExtinguisherType.Water || eType == ExtinguisherType.Foam || eType == ExtinguisherType.Powder) 
-                return 1f; // Hiệu quả 100%
-            if (eType == ExtinguisherType.CO2) 
-                return 0.3f; // CO2 kém hiệu quả với lửa rắn (dễ bùng lại)
-        }
-        
-        // Ví dụ: Lửa Điện (E)
-        if (fClass == FireClass.E_Electrical)
-        {
-            if (eType == ExtinguisherType.Water || eType == ExtinguisherType.Foam) 
-                return 0f; // NGHIÊM CẤM (Có thể trả về -1 để báo hiệu giật điện)
-            if (eType == ExtinguisherType.CO2 || eType == ExtinguisherType.Powder) 
-                return 1f; // Chuẩn
+            case FireClass.A_Solid:
+                // Gỗ, giấy, vải
+                if (eType == ExtinguisherType.Water ||
+                    eType == ExtinguisherType.Foam ||
+                    eType == ExtinguisherType.Powder)
+                    return 1f;
+                if (eType == ExtinguisherType.CO2)
+                    return 0.3f;
+                return 0f;
+
+            case FireClass.B_Liquid:
+                // Xăng, dầu
+                if (eType == ExtinguisherType.CO2 ||
+                    eType == ExtinguisherType.Foam ||
+                    eType == ExtinguisherType.Powder)
+                    return 1f;
+                return 0f;
+
+            case FireClass.C_Gas:
+                // Gas
+                if (eType == ExtinguisherType.CO2 ||
+                    eType == ExtinguisherType.Powder)
+                    return 1f;
+                return 0f;
+
+            case FireClass.E_Electrical:
+                // Điện
+                if (eType == ExtinguisherType.CO2 ||
+                    eType == ExtinguisherType.Powder)
+                    return 1f;
+                return 0f;
+
+            case FireClass.K_CookingOil:
+                // Dầu ăn (bếp)
+                if (eType == ExtinguisherType.Chemiscal)
+                    return 1f;
+                return 0f;
         }
 
-        return 1f; // Mặc định
+        return 0f; 
     }
 
-    // Vẽ vòng tròn tầm nhiệt trong Editor để dễ quan sát thiết kế màn chơi
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

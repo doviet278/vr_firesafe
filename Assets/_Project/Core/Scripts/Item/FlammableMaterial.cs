@@ -15,10 +15,16 @@ public class FlammableMaterial : MonoBehaviour
     [Header("Fire Entity")]
     public GameObject fireNodePrefab; // Prefab ngọn lửa sẽ sinh ra
     private GameObject currentFireNode;
+    private SceneTrainExtinguisherManager trainExtinguisherManager;
 
     void Start()
     {
         currentFuel = maxFuel;
+        GameObject obj = GameObject.Find("trainExtinguisherManager");
+        if (obj != null)
+        {
+            trainExtinguisherManager = obj.GetComponent<SceneTrainExtinguisherManager>();
+        }
     }
 
    void Update()
@@ -86,7 +92,6 @@ public class FlammableMaterial : MonoBehaviour
             MeshRenderer mr = GetComponent<MeshRenderer>();
             if (mr != null) mr.material.color = Color.black;
             
-            Debug.Log(gameObject.name + " da chay rui thanh tro.");
         }
     }
 
@@ -97,8 +102,8 @@ public class FlammableMaterial : MonoBehaviour
         currentTemperature = 25f; 
         if (currentFireNode != null)
         {
+            trainExtinguisherManager?.ReportFireExtinguished();
             Destroy(currentFireNode);
         }
-        Debug.Log(gameObject.name + " da duoc dap tat.");
     }
 }

@@ -21,6 +21,11 @@ public class GameManager : MonoBehaviour
     [TextArea(2, 5)]
     public string[] fireSafetyTips; // Danh sách các mẹo/kiến thức PCCC sẽ hiện ngẫu nhiên
 
+    public float timeLimit = 120f; // thời gian (giây), ví dụ 2 phút
+    private float currentTime;
+
+    public TMP_Text timerText; // TextMeshPro hiển thị mm:ss
+
     void Awake()
     {
         // Khởi tạo Singleton
@@ -28,6 +33,28 @@ public class GameManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
+    void Start()
+    {
+        currentTime = timeLimit;
+        UpdateTimerUI();
+    }
+
+    void Update()
+    {
+        if (Time.timeScale == 0f) return; // nếu game đã dừng (win) thì không chạy nữa
+
+        if (currentTime > 0)
+        {
+            currentTime -= Time.deltaTime;
+            if (currentTime < 0) currentTime = 0;
+
+            UpdateTimerUI();
+        }
+        else
+        {
+            TimeUp();
+        }
+    }
     // SCENE 1: Hàm được gọi khi người chơi nhặt/nhấn vào một điểm nguy cơ
     public void ReportHazardFound()
     {
@@ -74,5 +101,33 @@ public class GameManager : MonoBehaviour
         
         // Thay "MainMenu" bằng đúng tên Scene giao diện chính của bạn
         SceneManager.LoadScene("MainMenu"); 
+    }
+    void UpdateTimerUI()
+    {
+        int minutes = Mathf.FloorToInt(currentTime / 60);
+        int seconds = Mathf.FloorToInt(currentTime % 60);
+
+        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    void TimeUp()
+    {
+        Debug.Log("HET GIO!");
+
+        Time.timeScale = 0f;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        // Có thể dùng lại victoryPanel hoặc tạo panel riêng
+        if (victoryPanel != null)
+        {
+            victoryPanel.SetActive(true);
+
+            if (tipText != null)
+            {
+                tipText.text = "BAN DA HET GIO!";
+            }
+        }
     }
 }

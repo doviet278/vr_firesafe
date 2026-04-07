@@ -6,7 +6,7 @@ public class ExtinguisherItem : ItemBase
     [Header("Extinguisher Settings")]
     public ExtinguisherType extType = ExtinguisherType.CO2; // Loại bình (CO2, Bột, Nước)
     public float sprayDistance = 5f; // Tầm xịt
-    public float damagePerSecond = 30f; // Sức dập lửa (Máu lửa mặc định là 100)
+    public float damagePerSecond = 50f; // Sức dập lửa (Máu lửa mặc định là 100)
 
     [Header("Effects")]
     public ParticleSystem foamParticles; // Hiệu ứng bọt tuyết
@@ -44,7 +44,6 @@ public class ExtinguisherItem : ItemBase
         Transform camTransform = cam.transform;
         Ray ray = new Ray(camTransform.position, camTransform.forward);
 
-        // Dùng RaycastAll để tia ngắm xuyên qua cái bàn, chạm tới tận ngọn lửa bên trong
         RaycastHit[] hits = Physics.RaycastAll(ray, sprayDistance);
 
         foreach (RaycastHit hit in hits)
@@ -53,10 +52,8 @@ public class ExtinguisherItem : ItemBase
             FireNode fire = hit.collider.GetComponent<FireNode>();
             if (fire != null)
             {
-                // Trừ máu ngọn lửa dựa trên thời gian thực tế (Time.deltaTime)
                 fire.TakeDamage(extType, damagePerSecond * Time.deltaTime);
-                
-                // Bắn trúng lớp lửa đầu tiên là dừng quét để tiết kiệm hiệu năng
+               
                 break; 
             }
         }
