@@ -625,6 +625,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoorController
   animator: {fileID: 730198113}
   openTriggerName: Open
+  closeTriggerName: Close
+  doorAudioSource: {fileID: 0}
+  openSound: {fileID: 0}
+  closeSound: {fileID: 0}
 --- !u!95 &730198113
 Animator:
   serializedVersion: 7
@@ -825,6 +829,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoorController
   animator: {fileID: 1323786357612587048}
   openTriggerName: Open
+  closeTriggerName: Close
+  doorAudioSource: {fileID: 0}
+  openSound: {fileID: 0}
+  closeSound: {fileID: 0}
 --- !u!1 &1132456041 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6996954998340794147, guid: df59e9a7327cd684a8618b857ffd8805, type: 3}
@@ -1724,6 +1732,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -1.2175
       objectReference: {fileID: 0}
+    - target: {fileID: 8170148776731809580, guid: df59e9a7327cd684a8618b857ffd8805, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8606289974381548700, guid: df59e9a7327cd684a8618b857ffd8805, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1905,6 +1917,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DoorController
   animator: {fileID: 1323786357612587050}
   openTriggerName: Open
+  closeTriggerName: Close
+  doorAudioSource: {fileID: 0}
+  openSound: {fileID: 0}
+  closeSound: {fileID: 0}
 --- !u!65 &1323786357612587053
 BoxCollider:
   m_ObjectHideFlags: 0

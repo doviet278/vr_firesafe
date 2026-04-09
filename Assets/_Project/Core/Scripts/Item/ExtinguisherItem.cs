@@ -8,6 +8,8 @@ public class ExtinguisherItem : ItemBase
     public float sprayDistance = 5f; // Tầm xịt
     public float damagePerSecond = 50f; // Sức dập lửa (Máu lửa mặc định là 100)
 
+    [Header("Audio Settings")]
+    public AudioSource sprayAudio;
     [Header("Effects")]
     public ParticleSystem foamParticles; // Hiệu ứng bọt tuyết
     private Camera cam;
@@ -48,7 +50,13 @@ public class ExtinguisherItem : ItemBase
             foamParticles.Play();
         }
 
-        // 2. Bắn tia Raycast để dập lửa
+        // 2. Chạy âm thanh xịt
+        if (sprayAudio != null && !sprayAudio.isPlaying)
+        {
+            sprayAudio.Play();
+        }
+
+        // 3. Bắn tia Raycast để dập lửa
         Transform camTransform = cam.transform;
         Ray ray = new Ray(camTransform.position, camTransform.forward);
 
@@ -78,6 +86,7 @@ public class ExtinguisherItem : ItemBase
             if (Mouse.current.rightButton.wasReleasedThisFrame)
             {
                 if (foamParticles != null) foamParticles.Stop();
+                if (sprayAudio != null) sprayAudio.Stop();
             }
         }
     }
