@@ -16,14 +16,19 @@ public class FlammableMaterial : MonoBehaviour
     public GameObject fireNodePrefab; // Prefab ngọn lửa sẽ sinh ra
     private GameObject currentFireNode;
     private SceneTrainExtinguisherManager trainExtinguisherManager;
-
+    private FinishScene1B finishScene1B;
     void Start()
     {
         currentFuel = maxFuel;
         GameObject obj = GameObject.Find("trainExtinguisherManager");
+        GameObject obj2 = GameObject.Find("FinishScene1B");
         if (obj != null)
         {
             trainExtinguisherManager = obj.GetComponent<SceneTrainExtinguisherManager>();
+        }
+        if (obj2 != null)
+        {
+            finishScene1B = obj2.GetComponent<FinishScene1B>();
         }
     }
 
@@ -103,7 +108,9 @@ public class FlammableMaterial : MonoBehaviour
         if (currentFireNode != null)
         {
             trainExtinguisherManager?.ReportFireExtinguished();
+            finishScene1B?.ReportFireExtinguished();
             Destroy(currentFireNode);
         }
+        Debug.LogError("DA DUOC DAP TAT!");
     }
 }

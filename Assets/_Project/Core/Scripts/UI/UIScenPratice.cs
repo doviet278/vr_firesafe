@@ -41,11 +41,13 @@ public class UIScenPratice : MonoBehaviour
 
     public void ChangeSceneMainMenu()
     {
+        Time.timeScale = 1f; // Đảm bảo thời gian được reset về bình thường khi quay lại menu
         SceneManager.LoadScene("MainMenu");
     }
 
     public void Replay(string sceneName)
     {
+        Time.timeScale = 1f; // Đảm bảo thời gian được reset về bình thường khi chơi lại
         SceneManager.LoadScene(sceneName);
     }
 }

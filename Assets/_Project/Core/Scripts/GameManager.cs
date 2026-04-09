@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     private int hazardsFound = 0;
 
     [Header("Victory UI Components")]
-    public GameObject victoryPanel; // Khung giao diện chúc mừng
+    public GameObject timeupPopup; // Khung giao diện chúc mừng
     public TMP_Text tipText; // Dòng chữ hiển thị kiến thức
 
     [Header("Knowledge Tips")]
@@ -104,15 +104,6 @@ public class GameManager : MonoBehaviour
         UIScenPratice.Instance.ShowLosePopup();
     }
 
-    // Hàm gắn vào nút "Về Menu" trên giao diện UI
-    public void ReturnToMainMenu()
-    {
-        // Bắt buộc phải khôi phục thời gian về 1 trước khi chuyển cảnh
-        Time.timeScale = 1f; 
-        
-        // Thay "MainMenu" bằng đúng tên Scene giao diện chính của bạn
-        SceneManager.LoadScene("MainMenu"); 
-    }
     void UpdateTimerUI()
     {
         int minutes = Mathf.FloorToInt(currentTime / 60);
@@ -132,10 +123,9 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        if (victoryPanel != null)
+        if (timeupPopup != null)
         {
-            victoryPanel.SetActive(true);
-
+            timeupPopup.SetActive(true);
             if (tipText != null)
             {
                 tipText.text = "BAN DA HET GIO!";
