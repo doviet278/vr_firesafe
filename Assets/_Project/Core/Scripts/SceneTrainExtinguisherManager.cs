@@ -3,7 +3,9 @@ using UnityEngine;
 public class SceneTrainExtinguisherManager : MonoBehaviour
 {
     public static SceneTrainExtinguisherManager Instance;
-    public int totalFireItems = 12; 
+    public int totalFireItems = 12;
+    [SerializeField] private GameObject completedPopup;
+    
     private int extinguishedCount = 0;
 
     public bool isCompleted = false;
@@ -30,6 +32,6 @@ public class SceneTrainExtinguisherManager : MonoBehaviour
     {
         isCompleted = true;
         Debug.LogError($"HOAN THANH!");
-
+        completedPopup.SetActive(true);
     }
 }

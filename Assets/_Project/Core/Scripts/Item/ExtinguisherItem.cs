@@ -11,18 +11,26 @@ public class ExtinguisherItem : ItemBase
     [Header("Effects")]
     public ParticleSystem foamParticles; // Hiệu ứng bọt tuyết
     private Camera cam;
+    private UITutorial uITutorial;
     void Awake()
     {
         cam = Camera.main;
         // Gán thông tin mặc định cho bình
         itemName = "Binh Chua Chay " + extType.ToString();
         itemWeight = 10f; 
+        GameObject obj = GameObject.Find("UITutorial");
+        if (obj != null)
+        {
+            uITutorial = obj.GetComponent<UITutorial>();
+        }
     }
 
     public override void OnEquip()
     {
         base.OnEquip();
         if (foamParticles != null) foamParticles.Stop();
+        uITutorial?.HideTutorialF();
+        uITutorial?.ShowTutorialFire(); 
     }
 
     public override void OnUnequip()
@@ -58,6 +66,8 @@ public class ExtinguisherItem : ItemBase
                 break; 
             }
         }
+        uITutorial?.HideTutorialFire();
+        uITutorial?.ShowTutorialQ();
     }
 
     void Update()

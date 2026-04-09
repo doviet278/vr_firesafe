@@ -46,14 +46,13 @@ public class PlayerMovement : MonoBehaviour
     private float targetCamHeight;
 
     private PlayerStats playerStats;
-
-    
+    public bool allowLook = true;
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
         playerStats = GetComponent<PlayerStats>();
 
         // Khởi tạo tư thế đứng mặc định
@@ -65,7 +64,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Keyboard.current == null || Mouse.current == null) return;
 
-        HandleLook();
+        if (allowLook)
+        {
+            HandleLook();
+        }
+
+        if (!allowLook) return;
+
         HandleStance(); // Xử lý thay đổi tư thế
         
         if (dashCooldownCounter > 0) dashCooldownCounter -= Time.deltaTime;

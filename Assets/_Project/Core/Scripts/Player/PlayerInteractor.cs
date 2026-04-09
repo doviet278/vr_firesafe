@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -13,17 +14,28 @@ public class PlayerInteractor : MonoBehaviour
     public Image crosshairImage;
     public Sprite defaultCrosshair;
     public Sprite interactCrosshair;
-
+    private UITutorial uiTutorial;
     private IInteractable currentInteractable;
+
+    private void Awake()
+    {
+        GameObject obj = GameObject.Find("UITutorial");
+        if (obj != null)
+        {
+            uiTutorial = obj.GetComponent<UITutorial>();
+        }
+    }
 
     void Update()
     {
         if (Keyboard.current == null || Mouse.current == null) return;
         HandleRaycast();
         HandleInput();
+        
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
             HandleUIClick();
+            HandleSelect();
         }
     }
 
@@ -38,11 +50,27 @@ public class PlayerInteractor : MonoBehaviour
             {
                 currentInteractable = interactable;
                 crosshairImage.sprite = interactCrosshair;
+                uiTutorial?.ShowTutorialF();
                 return;
             }
+         
         }
+        uiTutorial?.HideTutorialF();
         currentInteractable = null;
         crosshairImage.sprite = defaultCrosshair;
+    }
+
+    private void HandleSelect()
+    {
+        Ray ray = new Ray(transform.position, transform.forward);
+        if(Physics.Raycast(ray, out RaycastHit hit, interactRange))
+        {
+            EquipmentItem item = hit.collider.GetComponent<EquipmentItem>();
+            if (item != null)
+            {
+                item.Interact();
+            }
+        }
     }
 
     private void HandleUIClick()

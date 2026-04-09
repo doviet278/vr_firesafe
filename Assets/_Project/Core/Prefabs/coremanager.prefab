@@ -120,7 +120,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7017116317824482481}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2783808440000627789}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ReturnToMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2523169066494091755
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,6 +219,8 @@ MonoBehaviour:
   - "v\u1EB7n k\xEDn b\xECnh gas khi kh\xF4ng s\u1EED d\u1EE5ng\nr\xFAt c\xE1c thi\u1EBFt
     b\u1ECB \u0111i\u1EC7n kh\xF4ng d\xF9ng t\u1EDBi\nkh\xF4ng \u0111\u1EC3 x\u0103ng
     d\u1EA7u, ch\u1EA5t ch\xE1y n\u1ED5 g\u1EA7n \u1ED5 \u0111i\u1EC7n"
+  timeLimit: 120
+  timerText: {fileID: 0}
 --- !u!1 &5998840051865770646
 GameObject:
   m_ObjectHideFlags: 0

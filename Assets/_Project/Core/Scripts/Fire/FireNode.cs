@@ -98,7 +98,8 @@ public class FireNode : MonoBehaviour
             case FireClass.E_Electrical:
                 // Điện
                 if (eType == ExtinguisherType.CO2 ||
-                    eType == ExtinguisherType.Powder)
+                    eType == ExtinguisherType.Powder||
+                    eType == ExtinguisherType.Chemiscal)
                     return 1f;
                 return 0f;
 

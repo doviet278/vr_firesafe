@@ -11,6 +11,7 @@ public class PC_Controller : MonoBehaviour
     [Header("Camera Look Settings")]
     public Transform playerCamera;
     public float mouseSensitivity = 15f;
+    public bool allowLook = true;
 
     private CharacterController controller;
     private Vector3 velocity;
@@ -28,7 +29,10 @@ public class PC_Controller : MonoBehaviour
         // Phải luôn kiểm tra xem bàn phím/chuột có đang kết nối không
         if (Keyboard.current == null || Mouse.current == null) return;
 
-        HandleMouseLook();
+        if (allowLook)
+        {
+            HandleMouseLook();
+        }
         HandleMovement();
     }
 

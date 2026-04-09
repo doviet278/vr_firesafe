@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     private float currentTime;
 
     public TMP_Text timerText; // TextMeshPro hiển thị mm:ss
-
+    public bool isShowDialog = true;
     void Awake()
     {
         // Khởi tạo Singleton
@@ -41,6 +41,11 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        if (isShowDialog)
+        {
+            return;
+        }
+
         if (Time.timeScale == 0f) return; // nếu game đã dừng (win) thì không chạy nữa
 
         if (currentTime > 0)
@@ -80,17 +85,7 @@ public class GameManager : MonoBehaviour
         Cursor.visible = true;
 
         // Bật giao diện chiến thắng
-        if (victoryPanel != null)
-        {
-            victoryPanel.SetActive(true);
-            
-            // Random kiến thức PCCC
-            if (fireSafetyTips.Length > 0 && tipText != null)
-            {
-                int randomIndex = Random.Range(0, fireSafetyTips.Length);
-                tipText.text = "KIEN THUC PCCC:\n" + fireSafetyTips[randomIndex];
-            }
-        }
+        UIScenPratice.Instance.ShowLosePopup();
     }
 
     // Hàm gắn vào nút "Về Menu" trên giao diện UI

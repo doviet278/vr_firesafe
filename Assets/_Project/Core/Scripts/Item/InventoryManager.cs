@@ -14,11 +14,17 @@ public class InventoryManager : MonoBehaviour
     private List<ItemBase> inventory = new List<ItemBase>();
     private int selectedIndex = -1;
     private PlayerStats playerStats;
-
+    private UITutorial uiTutorial;
     void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+
+        GameObject obj = GameObject.Find("UITutorial");
+        if(obj != null)
+        {
+            uiTutorial = obj.GetComponent<UITutorial>();
+        }
     }
 
     void Start()
@@ -109,6 +115,7 @@ public class InventoryManager : MonoBehaviour
     {
         if (Keyboard.current.qKey.wasPressedThisFrame && selectedIndex >= 0 && selectedIndex < inventory.Count)
         {
+            uiTutorial?.HideTutorialQ();
             ItemBase itemToDrop = inventory[selectedIndex];
             
             inventory.RemoveAt(selectedIndex);

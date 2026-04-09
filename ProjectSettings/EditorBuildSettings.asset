@@ -6,8 +6,35 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Project/Core/Scenes/SandBox.unity
-    guid: 55daccc09a3b69647bbab145b54a3ab3
+    path: Assets/Scenes/MainMenu.unity
+    guid: f7b56a5a33a737044b65d4ab1c3e20f9
+  - enabled: 1
+    path: Assets/Scenes/Scene1A.unity
+    guid: dc1428d52e3d46f48aa45ed52992383b
+  - enabled: 1
+    path: Assets/Scenes/Scene1B.unity
+    guid: 1ff537ec6be3f7a4aa5fc44cf03e7820
+  - enabled: 0
+    path: Assets/Scenes/Scene2.unity
+    guid: 9330bb0d268a0d84aa18c480c71365a6
+  - enabled: 1
+    path: Assets/Scenes/Scene2A.unity
+    guid: 46a72bb18d41af940a59f548b3333901
+  - enabled: 1
+    path: Assets/Scenes/FirePrevention.unity
+    guid: 35f1656ee87b7344aaf2553379979f39
+  - enabled: 1
+    path: Assets/Scenes/Scene3A.unity
+    guid: f74f95e2571a121458f83ba7b3b5bc46
+  - enabled: 1
+    path: Assets/Scenes/Scene3B.unity
+    guid: 85958dd082637bb42b7b53fa7440b5f9
+  - enabled: 0
+    path: Assets/Scenes/Scene3C.unity
+    guid: f949f912d34159046a7c3efd3d5f1adb
+  - enabled: 0
+    path: Assets/Scenes/Scene4.unity
+    guid: 66d85a7842eb91946b67e4c1ff56c2b9
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}
