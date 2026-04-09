@@ -14737,6 +14737,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1431091231 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5535749775911606181, guid: d1c5a890a20fb3443bc77f8954bc9f0d, type: 3}
+  m_PrefabInstance: {fileID: 1735838942}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10a04e3f5353f5945bd1678dd86a11f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
 --- !u!1 &1436277437
 GameObject:
   m_ObjectHideFlags: 0
@@ -23466,7 +23477,7 @@ PrefabInstance:
     - target: {fileID: 6654371340634281304, guid: de07eb519fcda7546b8031ef9e6e4d87, type: 3}
       propertyPath: pcController
       value: 
-      objectReference: {fileID: 1289034704}
+      objectReference: {fileID: 1431091231}
     - target: {fileID: 6654371340634281304, guid: de07eb519fcda7546b8031ef9e6e4d87, type: 3}
       propertyPath: lines.Array.data[0].text
       value: "Ch\xE0o m\u1EEBng \u0111\u1EBFn v\u1EDBi bu\u1ED5i hu\u1EA5n luy\u1EC7n
