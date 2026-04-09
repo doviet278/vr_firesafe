@@ -24,6 +24,9 @@ public class GameManager : MonoBehaviour
     public float timeLimit = 120f; // thời gian (giây), ví dụ 2 phút
     private float currentTime;
 
+    public AudioSource countdownAudio; // THÊM MỚI: Kéo AudioSource chứa file 10s vào đây
+    private bool isCountdownStarted = false;
+
     public TMP_Text timerText; // TextMeshPro hiển thị mm:ss
 
     void Awake()
@@ -46,6 +49,17 @@ public class GameManager : MonoBehaviour
         if (currentTime > 0)
         {
             currentTime -= Time.deltaTime;
+
+            // Bắt đầu đếm ngược âm thanh khi còn 10 giây
+            if (currentTime <= 11f && !isCountdownStarted)
+            {
+                if (countdownAudio != null)
+                {
+                    countdownAudio.Play();
+                }
+                isCountdownStarted = true; // Đánh dấu đã phát để Update không gọi lại Play() nữa
+            }
+
             if (currentTime < 0) currentTime = 0;
 
             UpdateTimerUI();
@@ -71,6 +85,8 @@ public class GameManager : MonoBehaviour
     public void TriggerVictory()
     {
         Debug.Log("CHIEN THANG!");
+
+        if (countdownAudio != null && countdownAudio.isPlaying) countdownAudio.Stop();
         
         // Dừng toàn bộ thời gian vật lý và chuyển động trong game
         Time.timeScale = 0f; 
@@ -113,6 +129,8 @@ public class GameManager : MonoBehaviour
     void TimeUp()
     {
         Debug.Log("HET GIO!");
+
+        if (countdownAudio != null) countdownAudio.Stop();
 
         Time.timeScale = 0f;
 
