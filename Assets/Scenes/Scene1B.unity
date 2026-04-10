@@ -1755,7 +1755,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 404244624}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2004664389}
+        m_TargetAssemblyTypeName: UIScenPratice, Assembly-CSharp
+        m_MethodName: ChangeSceneMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &404244624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1794,6 +1806,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 404244621}
   m_CullTransparentMesh: 1
+--- !u!1 &450425072
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 450425074}
+  - component: {fileID: 450425073}
+  m_Layer: 0
+  m_Name: FinishScene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &450425073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450425072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 691f0e6880938424885aae169460b83b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FinishScene1B
+  totalFireItems: 20
+  completedPopup: {fileID: 1007900990}
+  isCompleted: 0
+--- !u!4 &450425074
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450425072}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -343.3028, y: 6.13637, z: 397.0886}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &462853604
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2442,6 +2501,118 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 423204, guid: 50652fa5de6f15a4fa346a2292815aa6, type: 3}
   m_PrefabInstance: {fileID: 738767889}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &762576899
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 762576900}
+  - component: {fileID: 762576903}
+  - component: {fileID: 762576902}
+  - component: {fileID: 762576901}
+  m_Layer: 0
+  m_Name: Mesh7 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &762576900
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762576899}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -1.8, y: 35.3, z: -11.562}
+  m_LocalScale: {x: 1, y: 3.254, z: 1.081}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1186984948}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!65 &762576901
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762576899}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.9999905, y: 27, z: 89.623}
+  m_Center: {x: -8.540795, y: 13.5, z: 157.54749}
+--- !u!23 &762576902
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762576899}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2992817050203590716, guid: 7d7b996fa96033b4bb942bcb82275ff0, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &762576903
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762576899}
+  m_Mesh: {fileID: 2897785591754834998, guid: 7d7b996fa96033b4bb942bcb82275ff0, type: 3}
 --- !u!1001 &793327864
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2587,7 +2758,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 02b719bbe558a3549ab2558b1bfa6bae, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b321dc4a977a3ac43819990b4ea2b6dc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3339,7 +3510,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 008b4c891a0bf794fa0b7c403af5e7e9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dc0c773b217284e4dbcb2983efddfc97, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3570,6 +3741,14 @@ PrefabInstance:
     - target: {fileID: 3344217716896850240, guid: 6003691b58b72b54c9a4222f2eee6a6e, type: 3}
       propertyPath: m_Name
       value: Water (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3784618690746615705, guid: 6003691b58b72b54c9a4222f2eee6a6e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3784618690746615705, guid: 6003691b58b72b54c9a4222f2eee6a6e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 46.1
       objectReference: {fileID: 0}
     - target: {fileID: 7083014441161374602, guid: 6003691b58b72b54c9a4222f2eee6a6e, type: 3}
       propertyPath: m_LocalScale.x
@@ -4108,7 +4287,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1091001983}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2004664389}
+        m_TargetAssemblyTypeName: UIScenPratice, Assembly-CSharp
+        m_MethodName: ChangeSceneMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1091001983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4309,6 +4500,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1061747141}
+  - {fileID: 762576900}
   m_Father: {fileID: 1788088020}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1198542044 stripped
@@ -4607,6 +4799,10 @@ PrefabInstance:
     - target: {fileID: 6288701836964224806, guid: de07eb519fcda7546b8031ef9e6e4d87, type: 3}
       propertyPath: m_Name
       value: Dialog
+      objectReference: {fileID: 0}
+    - target: {fileID: 6288701836964224806, guid: de07eb519fcda7546b8031ef9e6e4d87, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6351014099141529870, guid: de07eb519fcda7546b8031ef9e6e4d87, type: 3}
       propertyPath: m_Pivot.x
@@ -5621,6 +5817,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1918793055}
     m_Modifications:
+    - target: {fileID: 1691177686592230291, guid: 4129f2a29096cd4419a252a997817c9e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1691177686592230291, guid: 4129f2a29096cd4419a252a997817c9e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 27.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1691177686592230291, guid: 4129f2a29096cd4419a252a997817c9e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.9
+      objectReference: {fileID: 0}
     - target: {fileID: 3401047839769621085, guid: 4129f2a29096cd4419a252a997817c9e, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.99999994
@@ -5792,7 +6000,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1717688281}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2004664389}
+        m_TargetAssemblyTypeName: UIScenPratice, Assembly-CSharp
+        m_MethodName: Replay
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Scene1B
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1717688281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6624,7 +6844,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1972487851}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2004664389}
+        m_TargetAssemblyTypeName: UIScenPratice, Assembly-CSharp
+        m_MethodName: Replay
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Scene1B
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1972487851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6795,6 +7027,18 @@ PrefabInstance:
       propertyPath: timerText
       value: 
       objectReference: {fileID: 403151352}
+    - target: {fileID: 2783808440000627789, guid: eec59e8fcfc7e2741a4a0aaee5c7066f, type: 3}
+      propertyPath: timeupPopup
+      value: 
+      objectReference: {fileID: 809056811}
+    - target: {fileID: 2783808440000627789, guid: eec59e8fcfc7e2741a4a0aaee5c7066f, type: 3}
+      propertyPath: victoryPanel
+      value: 
+      objectReference: {fileID: 809056811}
+    - target: {fileID: 2783808440000627789, guid: eec59e8fcfc7e2741a4a0aaee5c7066f, type: 3}
+      propertyPath: countdownAudio
+      value: 
+      objectReference: {fileID: 1084475317}
     - target: {fileID: 7335630418965570939, guid: eec59e8fcfc7e2741a4a0aaee5c7066f, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -6867,6 +7111,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1133172712}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2126319019664805788, guid: eec59e8fcfc7e2741a4a0aaee5c7066f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2004664389}
     - targetCorrespondingSourceObject: {fileID: 2941155078272642004, guid: eec59e8fcfc7e2741a4a0aaee5c7066f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1084475317}
@@ -6887,6 +7134,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a04e3f5353f5945bd1678dd86a11f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+--- !u!1 &2004664388 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2126319019664805788, guid: eec59e8fcfc7e2741a4a0aaee5c7066f, type: 3}
+  m_PrefabInstance: {fileID: 2004664385}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2004664389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004664388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06fe1cc8dce2bf7429fa7d40d3a0664b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIScenPratice
+  winPopup: {fileID: 1007900990}
+  losePopup: {fileID: 809056811}
 --- !u!1001 &2006425720
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7455,3 +7721,4 @@ SceneRoots:
   - {fileID: 898571519}
   - {fileID: 155313551}
   - {fileID: 2004664385}
+  - {fileID: 450425074}

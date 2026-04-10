@@ -47,7 +47,7 @@ public class SceneFirePrevention : MonoBehaviour
             if (winPanel != null)
                 winPanel.SetActive(true);
 
-            Time.timeScale = 0f; // dừng game
+            Time.timeScale = 0f;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }

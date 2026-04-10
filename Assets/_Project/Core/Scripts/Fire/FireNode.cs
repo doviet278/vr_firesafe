@@ -26,7 +26,7 @@ public class FireNode : MonoBehaviour
 
         //hostMaterial.ConsumeFuel(burnRate * Time.deltaTime);
 
-        SpreadHeat();
+        //SpreadHeat();
     }
 
     private void SpreadHeat()

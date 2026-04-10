@@ -116,6 +116,10 @@ public class InventoryManager : MonoBehaviour
         if (Keyboard.current.qKey.wasPressedThisFrame && selectedIndex >= 0 && selectedIndex < inventory.Count)
         {
             uiTutorial?.HideTutorialQ();
+            if(TowelUIManager.Instance != null)
+            {
+                TowelUIManager.Instance.ShowClothOverlay(false);
+            }
             ItemBase itemToDrop = inventory[selectedIndex];
             
             inventory.RemoveAt(selectedIndex);
