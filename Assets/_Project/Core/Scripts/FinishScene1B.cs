@@ -34,5 +34,7 @@ public class FinishScene1B : MonoBehaviour
         isCompleted = true;
         Debug.LogError($"HOAN THANH!");
         completedPopup.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }

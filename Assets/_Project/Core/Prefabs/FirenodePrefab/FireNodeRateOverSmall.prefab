@@ -50,6 +50,7 @@ MonoBehaviour:
   burnRate: 5
   heatSpreadRadius: 3
   heatPower: 10
+  wrongAudio: {fileID: 0}
 --- !u!135 &8402420779924788335
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -16,6 +16,7 @@ public class PlayerInteractor : MonoBehaviour
     public Sprite interactCrosshair;
     private UITutorial uiTutorial;
     private IInteractable currentInteractable;
+    private SoundError soundError;
 
     private void Awake()
     {
@@ -23,6 +24,11 @@ public class PlayerInteractor : MonoBehaviour
         if (obj != null)
         {
             uiTutorial = obj.GetComponent<UITutorial>();
+        }
+        GameObject sound = GameObject.Find("SoundError");
+        if (sound != null)
+        {
+            soundError = sound.GetComponent<SoundError>();
         }
     }
 
@@ -69,6 +75,10 @@ public class PlayerInteractor : MonoBehaviour
             if (item != null)
             {
                 item.Interact();
+            }
+            else
+            {
+                soundError?.PlayWrong();
             }
         }
     }

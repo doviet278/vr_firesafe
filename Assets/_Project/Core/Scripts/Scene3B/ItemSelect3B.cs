@@ -38,6 +38,7 @@ public class ItemSelect3B : ItemBase
         }
 
         Scene3BManager.Instance.MarkItemUsed(itemType);
+        InventoryManager.Instance.RemoveCurrentItem();
     }
 
     void UsePhone()

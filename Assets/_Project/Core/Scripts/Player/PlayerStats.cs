@@ -16,11 +16,15 @@ public class PlayerStats : MonoBehaviour
         currentHealth = maxHealth;
     }
 
+    
+
     // AI/Dev khác gọi hàm này để gây sát thương
     public void TakeDamage(float amount)
     {
-        currentHealth -= amount;
-        if (currentHealth <= 0) Die();
+        if (currentHealth <= 0f) return;
+
+        currentHealth = Mathf.Max(0f, currentHealth - amount);
+        if (currentHealth <= 0f) Die();
     }
 
     // Tính toán tỷ lệ làm chậm dựa trên cân nặng (Trả về từ 0.3 đến 1.0)
@@ -37,6 +41,13 @@ public class PlayerStats : MonoBehaviour
     private void Die()
     {
         Debug.Log("Player da chet!");
-        // Gọi GameManager để hiện màn hình Game Over
+        if (UIScenPratice.Instance != null)
+        {
+            UIScenPratice.Instance.ShowLosePopup();
+        }
+
+        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }

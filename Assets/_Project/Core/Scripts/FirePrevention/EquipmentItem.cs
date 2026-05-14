@@ -6,7 +6,7 @@ public class EquipmentItem : MonoBehaviour
     public bool isFound = false;
 
     [Header("UI Tick")]
-    public Image tickIcon; // icon dấu ✔
+    public Image tickIcon; 
 
     private SceneFirePrevention gameManager;
 

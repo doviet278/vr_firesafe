@@ -154,4 +154,30 @@ public class InventoryManager : MonoBehaviour
             }
         }
     }
+
+    public void RemoveCurrentItem()
+    {
+        if (selectedIndex < 0 || selectedIndex >= inventory.Count) return;
+
+        ItemBase itemToRemove = inventory[selectedIndex];
+
+        inventory.RemoveAt(selectedIndex);
+        playerStats.currentWeight -= itemToRemove.itemWeight;
+
+        // Xóa khỏi scene luôn (nếu muốn)
+        Destroy(itemToRemove.gameObject);
+
+        // Sắp xếp lại index
+        if (inventory.Count == 0)
+        {
+            selectedIndex = -1;
+        }
+        else
+        {
+            selectedIndex--;
+            if (selectedIndex < 0) selectedIndex = inventory.Count - 1;
+
+            EquipCurrentItem();
+        }
+    }
 }

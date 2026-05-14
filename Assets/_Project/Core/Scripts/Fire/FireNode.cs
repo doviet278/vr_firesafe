@@ -8,8 +8,17 @@ public class FireNode : MonoBehaviour
     public float heatPower = 10f; // Sức nóng truyền cho vật khác mỗi giây
 
     private FlammableMaterial hostMaterial;
-    private float fireHealth = 100f;    
+    private float fireHealth = 100f;
+    private SoundError soundError;
 
+    private void Awake()
+    {
+        GameObject sound = GameObject.Find("SoundError");
+        if (sound != null)
+        {
+            soundError = sound.GetComponent<SoundError>();
+        }
+    }
     public void Initialize(FlammableMaterial host)
     {
         hostMaterial = host;
@@ -53,7 +62,7 @@ public class FireNode : MonoBehaviour
 
         if (effectiveness <= 0f)
         {
-
+            soundError?.PlayWrong();
             return;
         }
 

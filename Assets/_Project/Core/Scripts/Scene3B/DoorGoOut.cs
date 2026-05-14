@@ -20,6 +20,13 @@ public class DoorGoOut : MonoBehaviour,IInteractable
         {
             losePopup.SetActive(true);
         }
+
+        // Dừng toàn bộ thời gian vật lý và chuyển động trong game
+        Time.timeScale = 0f;
+
+        // Hiển thị lại con trỏ chuột để người chơi có thể bấm nút
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
 }

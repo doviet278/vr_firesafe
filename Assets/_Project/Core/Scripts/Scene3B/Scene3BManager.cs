@@ -31,7 +31,7 @@ public class Scene3BManager : MonoBehaviour
 
     void CheckComplete()
     {
-        if (usedPhone && usedCloth && usedAlarm)
+        if (usedCloth && usedAlarm)
         {
             OnSceneCompleted();
         }

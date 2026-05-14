@@ -45,6 +45,8 @@ public class PlayerMovement : MonoBehaviour
     private float targetHeight;
     private float targetCamHeight;
 
+    public bool IsCrouching => Mathf.Abs(targetHeight - crouchHeight) < 0.01f;
+
     private PlayerStats playerStats;
     public bool allowLook = true;
 

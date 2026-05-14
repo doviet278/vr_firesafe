@@ -6,6 +6,8 @@ public class TowelUIManager : MonoBehaviour
 
     public GameObject clothOverlay;
 
+    public bool IsClothActive => clothOverlay != null && clothOverlay.activeSelf;
+
     void Awake()
     {
         Instance = this;
@@ -13,6 +15,9 @@ public class TowelUIManager : MonoBehaviour
 
     public void ShowClothOverlay(bool show)
     {
-        clothOverlay.SetActive(show);
+        if (clothOverlay != null)
+        {
+            clothOverlay.SetActive(show);
+        }
     }
 }

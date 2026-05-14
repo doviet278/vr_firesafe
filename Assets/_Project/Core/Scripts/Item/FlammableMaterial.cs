@@ -28,6 +28,7 @@ public class FlammableMaterial : MonoBehaviour
         }
         if (obj2 != null)
         {
+            Debug.LogError("DA TIM THAY FINISH SCENE 1B!");
             finishScene1B = obj2.GetComponent<FinishScene1B>();
         }
     }

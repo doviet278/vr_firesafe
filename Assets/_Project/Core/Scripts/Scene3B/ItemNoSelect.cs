@@ -11,7 +11,6 @@ public class ItemNoSelect : MonoBehaviour,IInteractable
 
     public void OnInteract()
     {
-        Debug.Log("This item cannot be interacted with.");
         Time.timeScale = 0f; // Tạm dừng game
         losePopup.SetActive(true);
     }

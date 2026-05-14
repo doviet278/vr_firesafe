@@ -33,5 +33,12 @@ public class SceneTrainExtinguisherManager : MonoBehaviour
         isCompleted = true;
         Debug.LogError($"HOAN THANH!");
         completedPopup.SetActive(true);
+        Time.timeScale = 0f;
+
+        // 2. Mở khóa con trỏ chuột khỏi trung tâm màn hình
+        Cursor.lockState = CursorLockMode.None;
+
+        // 3. Hiển thị con trỏ chuột lên
+        Cursor.visible = true;
     }
 }
