@@ -15,12 +15,17 @@ public class HazardDamageZone : MonoBehaviour
         if (player == null) return;
 
         bool usingCloth = TowelUIManager.Instance != null && TowelUIManager.Instance.IsClothActive;
-        if (hazardType == HazardType.Smoke && usingCloth) return;
 
         float finalDamage = damagePerSecond;
 
         if (hazardType == HazardType.Smoke)
         {
+            // If player is using the cloth (towel) over face, reduce smoke damage by 90% (keep 10%)
+            if (usingCloth)
+            {
+                finalDamage *= 0.1f; // 90% reduction
+            }
+
             PlayerMovement movement = other.GetComponent<PlayerMovement>();
             if (movement != null && movement.IsCrouching)
             {

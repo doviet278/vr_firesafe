@@ -15806,6 +15806,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PopupManager
   item: {fileID: 0}
   btnStart: {fileID: 1702981553}
+  newPositionPopup: {fileID: 0}
 --- !u!114 &1050873105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19598,6 +19599,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PopupManager
   item: {fileID: 0}
   btnStart: {fileID: 1373062450}
+  newPositionPopup: {fileID: 0}
 --- !u!114 &1295280572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46667,6 +46669,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PopupManager
   item: {fileID: 0}
   btnStart: {fileID: 223089012}
+  newPositionPopup: {fileID: 0}
 --- !u!114 &1990881797
 MonoBehaviour:
   m_ObjectHideFlags: 0

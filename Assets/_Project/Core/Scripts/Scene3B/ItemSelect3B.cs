@@ -50,6 +50,7 @@ public class ItemSelect3B : ItemBase
     {
         Debug.Log("Dang che mat bang khan ");
         TowelUIManager.Instance.ShowClothOverlay(true);
+        GameTaskManager.Instance?.MarkTaskCompleted("1");
     }
 
 }
