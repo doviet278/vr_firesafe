@@ -53,10 +53,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.45594394
-  m_Height: 1.4916879
+  m_Radius: 1.2248943
+  m_Height: 3.7868223
   m_Direction: 1
-  m_Center: {x: 0.14765763, y: -0.68433005, z: 0.4134136}
+  m_Center: {x: 0.23460317, y: 1.356242, z: 0.056280136}
 --- !u!114 &6990270167416559659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,6 +72,7 @@ MonoBehaviour:
   hazardType: 0
   damagePerSecond: 10
   smokeToxicityPerSecond: 10
+  crouchSmokeDamageMultiplier: 0.5
 --- !u!1001 &2587512101599625815
 PrefabInstance:
   m_ObjectHideFlags: 0

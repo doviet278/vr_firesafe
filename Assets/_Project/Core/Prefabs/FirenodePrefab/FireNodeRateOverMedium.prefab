@@ -51,7 +51,6 @@ MonoBehaviour:
   burnRate: 5
   heatSpreadRadius: 3
   heatPower: 10
-  wrongAudio: {fileID: 6649714566119901239}
 --- !u!135 &8638113541603492991
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -86,7 +85,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 8cf89152ffdddab41899b2384e2e3a67, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 1
   Mute: 0
