@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class FireNode : MonoBehaviour
 {
     [Header("Fire Logic")]
@@ -7,35 +8,101 @@ public class FireNode : MonoBehaviour
     public float heatSpreadRadius = 3f; // Bán kính tỏa nhiệt
     public float heatPower = 10f; // Sức nóng truyền cho vật khác mỗi giây
 
+    [Header("Fire Sound")]
+    [SerializeField] private float soundMaxDistance = 5f;
+    [SerializeField] private float soundMinVolume = 0f;
+    [SerializeField] private float soundMaxVolume = 0.8f;
+
     private FlammableMaterial hostMaterial;
     private float fireHealth = 100f;
+    private AudioSource fireAudioSource;
+    private Transform playerTransform;
     private SoundError soundError;
 
     private void Awake()
     {
-        GameObject sound = GameObject.Find("SoundError");
-        if (sound != null)
+        fireAudioSource = GetComponent<AudioSource>();
+        if (fireAudioSource != null)
         {
-            soundError = sound.GetComponent<SoundError>();
+            fireAudioSource.playOnAwake = false;
+            fireAudioSource.loop = true;
+            fireAudioSource.Stop();
         }
+
+        soundError = SoundError.Instance;
     }
+
+    private void Start()
+    {
+        ResolvePlayerTransform();
+    }
+
     public void Initialize(FlammableMaterial host)
     {
         hostMaterial = host;
-        fireHealth = 100f; // Khởi tạo máu lửa
+        fireHealth = 100f; 
     }
 
     void Update()
     {
         if (hostMaterial == null || !hostMaterial.isBurning)
         {
+            StopFireSound();
             Destroy(gameObject); 
             return;
         }
 
+        ResolvePlayerTransform();
+        UpdateFireSound();
+
         //hostMaterial.ConsumeFuel(burnRate * Time.deltaTime);
 
         //SpreadHeat();
+    }
+
+    private void ResolvePlayerTransform()
+    {
+        if (playerTransform != null)
+            return;
+
+        if (Camera.main != null)
+        {
+            playerTransform = Camera.main.transform;
+        }
+    }
+
+    private void UpdateFireSound()
+    {
+        if (fireAudioSource == null || playerTransform == null)
+            return;
+
+        float distance = Vector3.Distance(playerTransform.position, transform.position);
+
+        if (distance > soundMaxDistance)
+        {
+            if (fireAudioSource.isPlaying)
+            {
+                fireAudioSource.Stop();
+            }
+
+            return;
+        }
+
+        float t = 1f - Mathf.InverseLerp(0f, soundMaxDistance, distance);
+        fireAudioSource.volume = Mathf.Lerp(soundMinVolume, soundMaxVolume, Mathf.Clamp01(t));
+
+        if (!fireAudioSource.isPlaying && fireAudioSource.clip != null)
+        {
+            fireAudioSource.Play();
+        }
+    }
+
+    private void StopFireSound()
+    {
+        if (fireAudioSource != null && fireAudioSource.isPlaying)
+        {
+            fireAudioSource.Stop();
+        }
     }
 
     private void SpreadHeat()

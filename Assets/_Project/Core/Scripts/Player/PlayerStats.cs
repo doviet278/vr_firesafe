@@ -16,9 +16,7 @@ public class PlayerStats : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    
 
-    // AI/Dev khác gọi hàm này để gây sát thương
     public void TakeDamage(float amount)
     {
         if (currentHealth <= 0f) return;
@@ -33,21 +31,20 @@ public class PlayerStats : MonoBehaviour
         if (currentWeight <= 0) return 1f;
         float weightRatio = currentWeight / maxWeightCapacity;
         weightRatio = Mathf.Clamp01(weightRatio);
-        
-        // Ví dụ: Đầy tải (ratio = 1) thì tốc độ còn 30% (0.3f)
         return Mathf.Lerp(1f, 0.3f, weightRatio); 
     }
 
     private void Die()
     {
         Debug.Log("Player da chet!");
-        if (UIScenPratice.Instance != null)
-        {
-            UIScenPratice.Instance.ShowLosePopup();
-        }
-
+    
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+
+         if (UIScenPratice.Instance != null)
+        {
+            UIScenPratice.Instance.ShowLosePopup();
+        }
     }
 }

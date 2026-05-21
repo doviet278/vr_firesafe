@@ -110,6 +110,7 @@ public class FlammableMaterial : MonoBehaviour
         {
             trainExtinguisherManager?.ReportFireExtinguished();
             finishScene1B?.ReportFireExtinguished();
+            SceneFinalManager.Instance?.ReportFireExtinguished();
             Destroy(currentFireNode);
         }
         Debug.LogError("DA DUOC DAP TAT!");

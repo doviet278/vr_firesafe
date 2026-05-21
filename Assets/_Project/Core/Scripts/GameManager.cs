@@ -101,7 +101,10 @@ public class GameManager : MonoBehaviour
         Cursor.visible = true;
 
         // Bật giao diện chiến thắng
-        UIScenPratice.Instance.ShowLosePopup();
+        if (UIScenPratice.Instance != null)
+        {
+            UIScenPratice.Instance.ShowWinPopup();
+        }
     }
 
     void UpdateTimerUI()
@@ -123,13 +126,11 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        if (timeupPopup != null)
+         if (UIScenPratice.Instance != null)
         {
-            timeupPopup.SetActive(true);
-            if (tipText != null)
-            {
-                tipText.text = "BAN DA HET GIO!";
-            }
+            UIScenPratice.Instance.ShowLosePopup();
         }
+
+
     }
 }

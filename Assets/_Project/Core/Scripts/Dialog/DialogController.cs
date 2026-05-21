@@ -20,6 +20,7 @@ public class DialogController : MonoBehaviour
 
     private void OnEnable()
     {
+        Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 

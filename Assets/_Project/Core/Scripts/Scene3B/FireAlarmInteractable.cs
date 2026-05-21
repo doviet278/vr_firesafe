@@ -36,7 +36,7 @@ public class FireAlarmInteractable : MonoBehaviour, IInteractable
             Debug.LogWarning("FireAlarmInteractable chua duoc gan AudioClip hoac AudioSource.");
             return;
         }
-
+        GameTaskManager.Instance.MarkTaskCompleted("3");
         StartCoroutine(PlayAlarmThreeTimes());
     }
 
